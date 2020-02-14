@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jogo da Forca</title>
+    <style>
+
+        body{
+            background-color: rgba(0, 0, 255, 0.5);
+        }
+        #dica{
+            font-family: cursive;
+            position: absolute;
+            left: 480px;
+            top: 100px;
+        }
+        .divs{
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            background-color: white;
+            font-size: xx-large;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+
+        }
+        #letras{
+            position: absolute;
+            top: 200px;
+            left: 400px;
+            border-radius: 50px;
+        }
+        #letra2{
+            left: 70px;
+            
+        }
+        #letra3{
+            left: 140px;
+            
+        }
+        #letra4{
+            left: 210px;
+            
+        }
+
+        #principal{
+            position: absolute;
+            top: 100px;
+            left: 10px;
+            width: 50px;
+            font-size: xx-large;
+            height: 50px;
+            font-family:Arial, Helvetica, sans-serif;
+            border: none;
+        }
+        #forca{
+            position: absolute;
+            width: 150px;
+            height: 300px;
+            border-top: solid 3px black;
+            border-left: solid 3px black;
+            left: 10px;
+            top: 10px;
+        }
+        .cabeca{
+            width: 70px;
+            height: 70px;
+            border-radius: 100px;
+            border: solid black 1px;
+            position: absolute;
+            left: 65px;
+        }
+        .tronco{
+            width: 100px;
+            height: 100px;
+            border-right: 1px solid black;
+            position: absolute;
+            top: 70px;
+        }
+        .bracoe{
+            width: 70px;
+            height:70px;
+            border-left: solid black 1px;
+            position: absolute;
+            top: 85px;
+            left: 68px;
+            transform: rotate(45grad);
+            
+        }
+        .bracod{
+            width: 70px;
+            height:70px;
+            border-top: solid black 1px;
+            position: absolute;
+            top: 85px;
+            left: 70px;
+            transform: rotate(45grad);
+
+        }
+        .pernae{
+            width: 70px;
+            height:70px;
+            border-left: solid black 1px;
+            position: absolute;
+            top: 184px;
+            left: 69px;
+            transform: rotate(45grad);
+
+        }
+        .pernad{
+            width: 70px;
+            height:70px;
+            border-top: solid black 1px;
+            position: absolute;
+            top: 184px;
+            left: 70px;
+            transform: rotate(45grad);
+        }
+        #jafoi{
+            font-family: cursive;
+            font-size: x-large;
+            position: absolute;
+            top: 300px;
+            left: 50px;
+        }
+        #resultPalavra{
+            position: absolute;
+            top: 500px;
+            color: rgba(0, 0, 255, 0);
+        }
+        .letras{
+            background-color: lightslategray;
+            width: 30px;
+            height: 30px;
+            position: relative;
+            left: 1px;
+            top: 400px;
+            padding: 3px;
+            display: inline-block;
+            font-size: x-large;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            cursor: pointer;
+        }
+        .letras:hover{
+            color: white;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <h2 id="dica">Animal</h2>
+    <h4 id="jafoi">Letras: </h4>
+
+    <section id="letras">
+        <div id="letra1" class="divs"><h3 id="letradv1"></h3></div>
+        <div id="letra2" class="divs"><h3 id="letradv2"></h3></div>
+        <div id="letra3" class="divs"><h3 id="letradv3"></h3></div>
+        <div id="letra4" class="divs"><h3 id="letradv4"></h3></div>
+    </section>
+
+    <section id="forca">
+        <div id="cabeca"></div>
+        <div id="tronco"></div>
+        <div id="pernae"></div>
+        <div id="pernad"></div>
+        <div id="bracoe"></div>
+        <div id="bracod"></div>
+    </section>
+    <h3 id="resultPalavra">Palavra Sorteada: </h3>
+
+    <section id="letrasgeral">
+
+        <div id="dva" class="letras" onclick="verificar('A')">a</div>
+        <div id="dvb" class="letras" onclick="verificar('B')">b</div>
+        <div id="dvc" class="letras" onclick="verificar('C')">c</div>
+        <div id="dvd" class="letras" onclick="verificar('D')">d</div>
+        <div id="dve" class="letras" onclick="verificar('E')">e</div>
+        <div id="dvf" class="letras" onclick="verificar('F')">f</div>
+        <div id="dvg" class="letras" onclick="verificar('G')">g</div>
+        <div id="dvh" class="letras" onclick="verificar('H')">h</div>
+        <div id="dvi" class="letras" onclick="verificar('I')">i</div>
+        <div id="dvj" class="letras" onclick="verificar('J')">j</div>
+        <div id="dvk" class="letras" onclick="verificar('K')">k</div>
+        <div id="dvl" class="letras" onclick="verificar('L')">l</div>
+        <div id="dvm" class="letras" onclick="verificar('M')">m</div>
+        <div id="dvn" class="letras" onclick="verificar('N')">n</div>
+        <div id="dvo" class="letras" onclick="verificar('O')">o</div>
+        <div id="dvp" class="letras" onclick="verificar('P')">p</div>
+        <div id="dvq" class="letras" onclick="verificar('Q')">q</div>
+        <div id="dvr" class="letras" onclick="verificar('R')">r</div>
+        <div id="dvs" class="letras" onclick="verificar('S')">s</div>
+        <div id="dvt" class="letras" onclick="verificar('T')">t</div>
+        <div id="dvu" class="letras" onclick="verificar('U')">u</div>
+        <div id="dvv" class="letras" onclick="verificar('V')">v</div>
+        <div id="dvw" class="letras" onclick="verificar('W')">w</div>
+        <div id="dvx" class="letras" onclick="verificar('X')">x</div>
+        <div id="dvy" class="letras" onclick="verificar('Y')">y</div>
+        <div id="dvz" class="letras" onclick="verificar('Z')">z</div>
+
+    </section>
+
+    <script>
+
+        var palavras=['BODE','PERU','ALCE','ATUM','FOCA','PUMA','GATO','RENA','ZEBU','MULA','RATO','ORCA','URSO']
+        var indicebr= Math.random()*13
+        var indice = Math.round(indicebr)
+        var palavra = palavras[indice]
+        var h3 = document.getElementById('resultPalavra')
+        var palavral = []
+        h3.innerHTML += palavra
+        var corpo = 0
+        var evento = 0
+        var jafoi = document.getElementById('jafoi')
+        var body = document.getElementsByTagName('body')
+
+        var cabeça = document.getElementById('cabeca')
+        var tronco = document.getElementById('tronco')
+        var pernae = document.getElementById('pernae')
+        var pernad = document.getElementById('pernad')
+        var braçoe = document.getElementById('bracoe')
+        var braçod = document.getElementById('bracod')
+
+        var dv1 = document.getElementById('letra1')
+        var dv2 = document.getElementById('letra2')
+        var dv3 = document.getElementById('letra3')
+        var dv4 = document.getElementById('letra4')
+        
+        function verificar(l){
+            palavral[0] = palavra.charAt(0)
+            palavral[1] = palavra.charAt(1)
+            palavral[2] = palavra.charAt(2)
+            palavral[3] = palavra.charAt(3)
+            jafoi.innerText += l+", "
+            
+            if( l == palavral[0]){
+                var obj = document.getElementById('letra1')
+                obj.innerHTML = l
+                evento++
+            }else if( l == palavral[1]){
+                var obj = document.getElementById('letra2')
+                obj.innerHTML = l
+                evento++
+            }else if( l == palavral[2]){
+                var obj = document.getElementById('letra3')
+                obj.innerHTML = l
+                evento++
+            }else if( l == palavral[3]){
+                var obj = document.getElementById('letra4')
+                obj.innerHTML = l
+                evento++
+            }else{
+                corpo++
+            }
+            if(corpo == 1){
+                cabeça.setAttribute("class", "cabeca")
+            }else if(corpo == 2){
+                tronco.setAttribute("class", "tronco")
+            }else if(corpo == 3){
+                bracod.setAttribute("class", "bracod")
+            }else if(corpo == 4){
+                bracoe.setAttribute("class", "bracoe")
+            }else if(corpo == 5){
+                pernad.setAttribute("class", "pernad")
+            }else if(corpo == 6){
+                pernae.setAttribute("class", "pernae")
+                alert('Você perdeu, a palavra era '+ palavra +'.')
+                location.reload()
+                indicebr= Math.random()*4
+                indice = Math.round(indicebr)
+                palavra = palavras[indice]
+                cabeça.removeAttribute("class")
+                tronco.removeAttribute("class")
+                braçod.removeAttribute("class")
+                braçoe.removeAttribute("class")
+                pernad.removeAttribute("class")
+                pernae.removeAttribute("class")
+                
+            }
+            if(evento == 4){
+                indicebr= Math.random()*4
+                indice = Math.round(indicebr)
+                palavra = palavras[indice]
+                h3.innerHTML += palavra
+                var obj = document.getElementsByClassName('divs')
+                obj.innerHTML = ""
+                alert('Parabéns, você conseguiu!')
+                location.reload()
+            }
+        }
+
+         
+    </script>
+
+</body>
+</html>
