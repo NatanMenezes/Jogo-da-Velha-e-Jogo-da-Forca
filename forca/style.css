@@ -1,0 +1,102 @@
+body{
+    font-family: sans-serif;
+}
+.categoria{
+    text-align: center;
+}
+.categoria:first-letter {
+    text-transform: capitalize;
+}
+.forca{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.boneco{
+    height: 40vh;
+}
+
+#jogada2, #jogada3, #jogada4, #jogada5, #jogada6, #jogada7{
+    display: none;
+}
+
+.palavra{
+    padding: 1em;
+    font-size: 1.5em;
+    letter-spacing: 0.1em;
+}
+.keyboard{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.letra{
+    font-size: larger;
+    cursor: pointer;
+    margin: 0.5em 0.1em;
+    background-color: white;
+    border: 1px lightgray solid;
+    border-radius: 15%;
+    width: 2em;
+    height: 2em;
+}
+
+.letra:hover{
+    background-color: lightgray;
+}
+
+.btn-add{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    margin-top: -8vh;
+}
+.novapalavra{
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    font-size: 1.6em;
+    background-color: purple;
+    cursor: pointer;
+}
+
+@media(max-width: 700px){
+    .btn-add{
+        margin-top: 1em;
+        justify-content: center;
+    }
+}
+
+@media(max-width: 500px){
+    .letra{
+        font-size: large;
+        flex-grow: 1;
+        flex-shrink: 1;
+    }
+    .boneco{
+        height: 30vh;
+    }
+}
+@media(max-width: 450px){
+    .letra{
+        font-size: medium;
+    }
+    .letra{
+        margin: 0.2em 0.05em;
+        padding: 2px;
+        width: 2em;
+    }
+    .forca{
+        width: 100%;
+        margin: 0;
+    }
+}
+@media(max-width: 390px){
+    .letra{
+        width: 7.5%;
+    }
+}
